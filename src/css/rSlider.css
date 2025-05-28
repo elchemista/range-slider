@@ -9,10 +9,11 @@
 }
 .rs-container {
     font-family: Arial, Helvetica, sans-serif;
-    height: 45px;
+    height: 22px;
     position: relative;
 }
-.rs-container .rs-bg, .rs-container .rs-selected {
+.rs-container .rs-bg,
+.rs-container .rs-selected {
     background-color: #eee;
     border: 1px solid #ededed;
     height: 10px;
@@ -43,14 +44,17 @@
     top: 0;
     transition: all 0.2s linear;
     width: 30px;
-    box-shadow: inset 0 0 1px #FFF, inset 0 1px 6px #ebebeb, 1px 1px 4px rgba(0, 0, 0, 0.1);
+    box-shadow:
+        inset 0 0 1px #fff,
+        inset 0 1px 6px #ebebeb,
+        1px 1px 4px rgba(0, 0, 0, 0.1);
 }
 .rs-container.disabled .rs-pointer {
     border-color: #ccc;
 }
 .rs-container .rs-pointer::before,
 .rs-container .rs-pointer::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 1px;
     height: 9px;
@@ -71,7 +75,7 @@
 }
 .rs-container .rs-scale {
     left: 0;
-    position: absolute;
+    /* position: absolute; */
     top: 5px;
     white-space: nowrap;
 }
@@ -79,7 +83,7 @@
     float: left;
     position: relative;
 }
- .rs-container .rs-scale span::before {
+.rs-container .rs-scale span::before {
     background-color: #ededed;
     content: "";
     height: 8px;
@@ -104,6 +108,7 @@
     display: inline-block;
     font-size: 12px;
     margin-top: 20px;
+    /* margin-left: -2px; */
     text-decoration: none;
 }
 .rs-container.disabled .rs-scale span ins {
@@ -112,18 +117,26 @@
 .rs-tooltip {
     color: #333;
     width: auto;
-    min-width: 60px;
+    min-width: 50px;
     height: 30px;
-	position: relative;
-	background: #fff;
-	border: 1px solid #00969b;
-    border-radius: 3px;
+    position: relative;
+    background: #fff;
+    border: 1px solid rgb(59 130 246 / 0.5);
+    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored:
+        0 1px 3px 0 var(--tw-shadow-color),
+        0 1px 2px -1px var(--tw-shadow-color);
+    box-shadow:
+        var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+
+    border-radius: 8px;
     position: absolute;
     transform: translate(-50%, -35px);
     left: 13px;
     text-align: center;
     font-size: 13px;
-    padding: 6px 10px 0;
+    padding: 3px 5px 0;
 }
 .rs-container.disabled .rs-tooltip {
     border-color: #ccc;
